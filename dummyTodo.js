@@ -53,7 +53,7 @@ let arrayFilter = []
   //same code>>>
 
   function checkComplete(status) {
-    let currentArray = arrayFilter.filter(array => array.completed == status);
+    let currentArray = arrayOfTodos.filter(array => array.completed == status);
     list.innerHTML = "";
     
     for (let i = 0; i < currentArray.length ; i++) {
