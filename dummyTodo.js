@@ -47,6 +47,11 @@ let arrayFilter = []
         }
   }
 
+
+  //Combined function to check for complete and incomplete.  true and false passed through
+  //and beccomes the status.  Allows to acheive different outcomes but with 
+  //same code>>>
+
   function checkComplete(status) {
     let currentArray = arrayFilter.filter(array => array.completed == status);
     list.innerHTML = "";
@@ -63,4 +68,38 @@ let arrayFilter = []
         }
         list.appendChild(element)
     }
+  }
+
+//Just the code for complete button>>>
+
+  function checkTrue() {
+      let currentArray = arrayFilter.filter(array => array.completed ==true);
+      list.innerHTML = "";
+
+      for (let i = 0; i < currentArray.length; i++) {
+          let element = document.createElement("li");
+          let text = document.createTextNode(currentArray[i].title);
+          element.appendChild(text)
+          if (currentArray[i].completed == true) {
+              element.classList.add("greenText")
+          }
+          list.appendChild(element); 
+      }
+  }
+
+//Just the code for the incomplete button>>>
+
+  function checkFalse() {
+      let currentArray = arrayFilter.filter(array => array.completed == false);
+      list.innerHTML = "";
+
+      for (let i = 0; i < currentArray.length; i++) {
+          let element = document.createElement("li");
+          let text = document.createTextNode(currentArray[i].title);
+          element.appendChild(text);
+          element.classList.add("redText");
+          list.appendChild(element);
+
+          
+      }
   }
